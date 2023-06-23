@@ -23,6 +23,7 @@ public:
     void show_inf();
     void insert_player_to_file();
     string get_name();
+    string get_idteam();
 };
 
 void Player::insert_inf()
@@ -62,4 +63,7 @@ void Player::insert_player_to_file(){
     ofstream MyFile("info/player.txt",ios::app);
     MyFile<<endl<<name<<";"<<id<<";"<<national<<";"<<date_of_birth<<";"<<weight<<";"<<height<<";"<<postion_play<<";"<<idteam;
     MyFile.close();
+}
+string Player::get_idteam(){
+    return idteam;
 }
