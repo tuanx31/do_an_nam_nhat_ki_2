@@ -1,15 +1,11 @@
 #pragma once
-#include <iostream>
-#include <vector>
 #include "Player.h"
-#include <vector>
 #include <sstream>
 #include <fstream>
 #include <string>
 using namespace std;
 class Team
 {
-
     string name, location, coach;
     vector<Player> list_player;
 
@@ -43,21 +39,4 @@ void Team::show_inf()
     cout << "ten doi bong : " << name << endl;
     cout << "dia phuong : " << location << endl;
     cout << "huan luyen vien : " << coach << endl;
-}
-void Team::insert_player_from_file()
-{
-    string input;
-    ifstream read_player("player.txt");
-    getline(read_player, input);
-    vector<string> elements;
-    stringstream ss(input);
-    string item;
-
-    while (getline(ss, item, '|'))
-    {
-        elements.push_back(item);
-    }
-    Player player(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5], elements[6]);
-    addPlayer(player);
-    read_player.close();
 }

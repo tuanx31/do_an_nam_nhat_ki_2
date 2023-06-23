@@ -1,39 +1,35 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include <sstream>
 #include <fstream>
-#include "Player.h"
+#include"Player.h"
 using namespace std;
 int main()
 {
-    ifstream read_player("player.txt");
-    string input;
-    vector<string> all_lines;
-    vector<Player> list_player;
+
+    ifstream read_player("info/player.txt"); // mở file để đọc
+    string input;                            // đọc từng dòng rồi cho vào input
+    vector<string> all_lines;                // 1 mảng gồm nhiều input
+    vector<Player> list_player;              // mảng player
     while (getline(read_player, input))
     {
-        all_lines.push_back(input);
+        all_lines.push_back(input); // thêm input vào mảng
     }
-    // Print all lines
+    
+    string item;
     for (const string &line : all_lines)
     {
-        cout << line << endl;
+        vector<string> elements;
+        stringstream ss(line);
+        while (getline(ss, item, ';'))
+        {
+            elements.push_back(item);
+        }
+        Player player(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5], elements[6],elements[7]);
+        list_player.push_back(player);
     }
-    vector<string> elements;
-    stringstream ss(input);
-    string item;
-
-    while (getline(ss, item, '|'))
+    for (Player &player : list_player)
     {
-        elements.push_back(item);
+        player.show_inf();
+        cout << "\n====================================="<<endl;
     }
-    Player player(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5], elements[6]);
-    // In các phần tử trong vector
-    // for (const string &element : elements)
-    // {
-    //     cout << element << endl;
-    // }
-    // player.show_inf();
     return 0;
 }
