@@ -18,8 +18,14 @@ public:
     string get_stadium();
     string get_team1();
     string get_team2();
+    void insert_to_file();
 };
 
+void Match::insert_to_file(){
+    ofstream MyFile("info/player.txt",ios::app);
+    MyFile<<endl<<date<<";"<<Stadium<<";"<<team1<<";"<<team2<<";"<<score_doi_1<<";"<<score_doi_2;
+    MyFile.close();
+}
 string Match::get_date(){
     return date;
 }
@@ -34,19 +40,19 @@ string Match::get_team2(){
 }
 void Match::insert_inf()
 {
-    cout << "Nhap ngay thi dau : ";
+    cout << "Nhập ngày thi đấu : ";
     fflush(stdin);
     getline(cin, date);
-    cout << "Nhap san thi dau : ";
+    cout << "Nhập sân thi đấu : ";
     fflush(stdin);
     getline(cin, Stadium);
-    cout << "Nhap ten doi bong  1 : ";
+    cout << "Nhập tên đội bóng  1 : ";
     fflush(stdin);
     getline(cin, team1);
-    cout << "Nhap ten doi bong  2 : ";
+    cout << "Nhập tên đội bóng  2 : ";
     fflush(stdin);
     getline(cin, team2);
-    cout << "nhap ti so  lan luot : ";
+    cout << "Nhập tỉ số lần lượt : ";
     cin>>score_doi_1>>score_doi_2;
 }
 void Match::show_inf()

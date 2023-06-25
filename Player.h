@@ -28,21 +28,21 @@ public:
 
 void Player::insert_inf()
 {
-    cout << "Nhap ho ten : ";
+    cout << "Nhập họ tên : ";
     fflush(stdin);
     getline(cin, name);
-    cout << "Nhap cmnd : ";
+    cout << "Nhập cmnd : ";
     fflush(stdin);
     getline(cin, cmnd);
-    cout << "Nhap quoc tich : ";
+    cout << "Nhập quốc tịch : ";
     fflush(stdin);
     getline(cin, national);
-    cout << "Nhap chieu cao (cm), can nang(kg) : ";
+    cout << "Nhập chiều cao (cm), cân nặng(kg) : ";
     cin >> height >> weight;
-    cout << "Nhap vi tri choi : ";
+    cout << "Nhập vị trí chơi : ";
     fflush(stdin);
     getline(cin, postion_play);
-    cout<<"Nhap id team : ";
+    cout<<"Nhập id team : ";
     fflush(stdin);
     getline(cin,idteam);
 }

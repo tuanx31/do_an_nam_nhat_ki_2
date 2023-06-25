@@ -16,12 +16,48 @@ public:
     void insert_inf();
     void show_inf();
     void insert_player_from_file();
+    void find_player_of_id_team(string id);
     string get_name();
     string get_id();
     void insert_team_to_file();
     string get_coach();
     string get_location();
 };
+
+void Team::insert_player_from_file(){
+    ifstream read_player("info/player.txt"); // mở file để đọc
+    string input;                            // đọc từng dòng rồi cho vào input
+    vector<string> all_lines;                // 1 mảng gồm nhiều input   
+    while (getline(read_player, input))
+    {
+        all_lines.push_back(input); // thêm input vào mảng
+    }
+    
+    string item;
+    for (const string &line : all_lines)
+    {
+        vector<string> elements;        
+        stringstream ss(line);
+        while (getline(ss, item, ';'))
+        {
+            elements.push_back(item);
+        }
+        Player player(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5], elements[6],elements[7]);
+        list_player.push_back(player);
+    }
+}
+
+void Team::find_player_of_id_team(string id){
+    Team::insert_player_from_file();
+    for (Player &player : list_player){
+        cout<<"Danh sách đội bóng của team "<<name<<endl;
+        if (player.get_idteam()==id)
+        {
+            player.show_inf();
+        }
+    }
+}
+
 string Team::get_location(){
     return location;
 }
@@ -49,13 +85,13 @@ void Team::insert_inf()
     cout<<"Nhập id team : ";
     fflush(stdin);
     getline(cin,id_team);
-    cout << "Nhap ten doi bong : ";
+    cout << "Nhập tên đội bóng : ";
     fflush(stdin);
     getline(cin, name);
-    cout << "Nhap dia phuong : ";
+    cout << "Nhập địa phương : ";
     fflush(stdin);
     getline(cin, location);
-    cout << "Nhap ten huan luyen vien : ";
+    cout << "Nhập tên huấn luyện viên : ";
     fflush(stdin);
     getline(cin, coach);
 }

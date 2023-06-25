@@ -28,7 +28,10 @@ public:
     void find_match_by_team(string team);
     void find_team_by_coach(string coach);
     void find_team_by_location(string location);
+    string get_idteam_by_nameTeam(string name);
 };
+
+
 
 void FootballManager::find_match_by_team(string team){
     for(Match &macth : list_match){
@@ -94,6 +97,17 @@ void FootballManager::insert_Match_from_file(){
         list_match.push_back(match);
     }
 }
+
+string FootballManager::get_idteam_by_nameTeam(string name){
+    for(Team &team : list_team){
+        if (team.get_name()==name)
+        {
+            return team.get_id();
+        }
+        
+    }
+}
+
 
 void FootballManager::find_team_by_location(string location){
     for(Team &team : list_team){
@@ -213,7 +227,8 @@ void teamManager(){
         cout<<"|| 3.Tìm kiếm đội bóng theo id \n";
         cout<<"|| 4.Tìm kiếm đội bóng theo người huấn luyện\n";
         cout<<"|| 5.Tìm kiếm đội bóng theo địa phương\n";
-        cout<<"|| 6.Thêm đội bóng \n";        
+        cout<<"|| 6.Thêm đội bóng \n";
+        cout<<"|| 7.Hiển thị danh sách người chơi theo tên đội bóng\n";        
         cout<<"|| 0.Quay lại menu chính\n";
         cout<<"====================  END  =======================\n";
         cout<<"Nhap lua chon : ";
@@ -290,6 +305,19 @@ void teamManager(){
             system("pause");
 
         }
+        else if (chon == 7)
+        {
+            string namedb;
+            cout<<"Nhập tên đội bóng";
+            fflush(stdin);
+            getline(cin,namedb);
+            FootballManager fmng;
+            auto idteam = fmng.get_idteam_by_nameTeam(namedb);
+            Team team;
+            team.find_player_of_id_team(idteam);
+            system("pause");
+
+        }
         
         else if (chon == 0){
             break;
@@ -353,7 +381,7 @@ void  playerManager(){
         
     }
     else if (chon == 4){
-        cout<<"Nhập cầu thủ cần xóa : //chuc nang nay chua lam";
+        cout<<"Nhập id cầu thủ cần xóa : //chuc nang nay chua lam";
         system("pause");
     }
     
@@ -375,6 +403,7 @@ void matchManganer(){
         cout<<"|| 2.Tìm kiếm trận đấu theo ngày\n ";
         cout<<"|| 3.Tìm kiếm trận đấu theo nhà thi đấu\n";
         cout<<"|| 4.Tìm kiếm trận đấu theo đội bóng \n";
+        cout<<"|| 5.Thêm trận đấu \n";
         cout<<"|| 0.Quay lại menu chính\n";
         cout<<"====================  END  =======================\n";
         cout<<"Nhập lựa chọn : ";
@@ -419,6 +448,22 @@ void matchManganer(){
             fmng.find_match_by_team(team);
             system("pause");
         }
+        else if (chon == 5)
+        {
+            int n;
+            cout<<"Nhập số trận đấu cần thêm :";
+            cin>>n;
+            for (int i = 0; i < n; i++)
+            {
+                cout<<"Nhập thông tin trận đấu thứ "<<i+1<<endl;
+                Match match;
+                match.insert_inf();
+                
+            }
+            cout<<"đã thêm xong ";
+            system("pause");
+        }
+        
         else if (chon == 0){
             break;
         }
