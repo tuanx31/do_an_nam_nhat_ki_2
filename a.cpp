@@ -1,14 +1,17 @@
 #include <sstream>
 #include <fstream>
-#include"Player.h"
+#include"Team.h"
 using namespace std;
+
+    vector<Team> list_player; 
+
 int main()
 {
 
-    ifstream read_player("info/player.txt"); // mở file để đọc
+    ifstream read_player("info/Team.txt"); // mở file để đọc
     string input;                            // đọc từng dòng rồi cho vào input
     vector<string> all_lines;                // 1 mảng gồm nhiều input
-    vector<Player> list_player;              // mảng player
+             // mảng player
     while (getline(read_player, input))
     {
         all_lines.push_back(input); // thêm input vào mảng
@@ -23,10 +26,10 @@ int main()
         {
             elements.push_back(item);
         }
-        Player player(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5], elements[6],elements[7]);
+        Team player(elements[0], elements[1], elements[2], elements[3]);
         list_player.push_back(player);
     }
-    for (Player &player : list_player)
+    for (Team &player : list_player)
     {
         player.show_inf();
         cout << "\n====================================="<<endl;

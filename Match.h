@@ -14,8 +14,24 @@ public:
     Match(string _date, string _stu, string _team1, string _team2, int _score_doi_1,int _score_doi_2) : date(_date), Stadium(_stu), team1(_team1), team2(_team2), score_doi_1(_score_doi_1),score_doi_2(_score_doi_2){};
     void insert_inf();
     void show_inf();
+    string get_date();
+    string get_stadium();
+    string get_team1();
+    string get_team2();
 };
 
+string Match::get_date(){
+    return date;
+}
+string Match::get_stadium(){
+    return Stadium;
+}
+string Match::get_team1(){
+    return team1;
+}
+string Match::get_team2(){
+    return team2;
+}
 void Match::insert_inf()
 {
     cout << "Nhap ngay thi dau : ";
