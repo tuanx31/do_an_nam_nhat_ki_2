@@ -1,3 +1,1 @@
-Nguyen Van C;123456;nghe an;30/10/1995;60;180;tien dao;D1
-Nguyen Van A;998932;Ha noi;20/12/2000;50;200;thu mon;D2
-Nguyen Van B;163814;Ha Tinh;31/10/2000;70;170;hau ve;D1
+Nguyen Van A;872343;Viet Nam;22/12/1990;190;80;tien dao;D1

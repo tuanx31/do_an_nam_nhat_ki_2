@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Team.h"
 using namespace std;
+#include <iomanip>
 class Match
 {
     string date; // dd/mm/yyy
@@ -22,7 +23,7 @@ public:
 };
 
 void Match::insert_to_file(){
-    ofstream MyFile("info/player.txt",ios::app);
+    ofstream MyFile("info/Match.txt",ios::app);
     MyFile<<endl<<date<<";"<<Stadium<<";"<<team1<<";"<<team2<<";"<<score_doi_1<<";"<<score_doi_2;
     MyFile.close();
 }

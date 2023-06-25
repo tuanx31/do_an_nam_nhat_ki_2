@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 class Player
@@ -37,6 +38,9 @@ void Player::insert_inf()
     cout << "Nhập quốc tịch : ";
     fflush(stdin);
     getline(cin, national);
+    cout<<"Nhập ngày sinh (dd/mm/yyyy): ";
+    fflush(stdin);
+    getline(cin,date_of_birth);
     cout << "Nhập chiều cao (cm), cân nặng(kg) : ";
     cin >> height >> weight;
     cout << "Nhập vị trí chơi : ";
@@ -49,10 +53,8 @@ void Player::insert_inf()
 
 void Player::show_inf()
 {
-    cout << "Ho ten : " << name << endl;
-    cout << "So cmnd : " << cmnd << endl
-         << "Quoc tich : " << national << endl
-         << "Chieu cao : " << height << "cm , can nang : " << weight << "kg"<<endl<<"id team : "<<idteam<<endl;
+    std::cout << std::setw(15) << name << std::setw(15) << cmnd << std::setw(15) 
+    << national <<std::setw(15) << date_of_birth<< std::setw(10) << height << std::setw(10) << weight << std::setw(10) << idteam << std::endl;
 
 }
 string Player::get_name(){
@@ -61,7 +63,7 @@ string Player::get_name(){
 
 void Player::insert_player_to_file(){
     ofstream MyFile("info/player.txt",ios::app);
-    MyFile<<endl<<name<<";"<<id<<";"<<national<<";"<<date_of_birth<<";"<<weight<<";"<<height<<";"<<postion_play<<";"<<idteam;
+    MyFile<<endl<<name<<";"<<cmnd<<";"<<national<<";"<<date_of_birth<<";"<<height<<";"<<weight<<";"<<postion_play<<";"<<idteam;
     MyFile.close();
 }
 string Player::get_idteam(){

@@ -3,6 +3,7 @@
 #include <sstream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 using namespace std;
 class Team
 {
@@ -50,7 +51,6 @@ void Team::insert_player_from_file(){
 void Team::find_player_of_id_team(string id){
     Team::insert_player_from_file();
     for (Player &player : list_player){
-        cout<<"Danh sách đội bóng của team "<<name<<endl;
         if (player.get_idteam()==id)
         {
             player.show_inf();
@@ -65,7 +65,7 @@ string Team::get_coach(){
     return coach;
 }
 void Team::insert_team_to_file(){
-    ofstream MyFile("info/player.txt",ios::app);
+    ofstream MyFile("info/Team.txt",ios::app);
     MyFile<<endl<<id_team<<";"<<name<<";"<<location<<";"<<coach;
     MyFile.close();
 }
@@ -96,8 +96,8 @@ void Team::insert_inf()
     getline(cin, coach);
 }
 void Team::show_inf()
-{   cout<<"id : "<<id_team<<endl;
-    cout << "ten doi bong : " << name << endl;
-    cout << "dia phuong : " << location << endl;
-    cout << "huan luyen vien : " << coach << endl;
+{   
+
+    cout << setw(8) << id_team << setw(15) << name << setw(17) << location << setw(15) << coach << endl;
+
 }
