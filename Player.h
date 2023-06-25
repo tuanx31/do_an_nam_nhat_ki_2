@@ -25,6 +25,7 @@ public:
     void insert_player_to_file();
     string get_name();
     string get_idteam();
+    void savefilecsv();
     bool operator==(const Player& other)const;
 };
 bool Player::operator==(const Player& other)const{
@@ -65,7 +66,11 @@ void Player::show_inf()
 string Player::get_name(){
     return name;
 }
-
+void Player::savefilecsv(){
+    ofstream MyFile("info/player.csv",ios::app);
+    MyFile<<name<<";"<<cmnd<<";"<<national<<";"<<date_of_birth<<";"<<height<<";"<<weight<<";"<<postion_play<<";"<<idteam<<endl;
+    MyFile.close();
+}
 void Player::insert_player_to_file(){
     ofstream MyFile("info/player.txt",ios::app);
     MyFile<<name<<";"<<cmnd<<";"<<national<<";"<<date_of_birth<<";"<<height<<";"<<weight<<";"<<postion_play<<";"<<idteam<<endl;

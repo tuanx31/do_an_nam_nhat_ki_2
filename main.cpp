@@ -34,7 +34,19 @@ public:
     void removePlayerbyName(string name);
     void removeTeambyname(string name);
     void removeMatchbyindex(int n);
+    void Playerxuatcsv();
 };
+
+void FootballManager::Playerxuatcsv(){
+    ofstream csv("info/player.csv");
+    csv<<"Ho Ten;cmnd;Quoc Tich;Ngay sinh;Chieu cao;Can Nang;Vi tri choi;Id Team\n";
+    insertPlayerformfile();
+    csv.close();
+    for (Player &player : list_player){
+        player.show_inf();
+        player.savefilecsv();
+    }
+}
 
 void clearFile(string typee){
     string path = "info/"+typee;
@@ -450,6 +462,7 @@ void  playerManager(){
         cout<<"|| 2.Tìm kiếm cầu thủ theo tên\n";
         cout<<"|| 3.Thêm cầu thủ \n";
         cout<<"|| 4.Xóa cầu thủ\n";
+        cout<<"|| 5.xuất file excel\n";
         cout<<"|| 0.Quay lại menu chính\n";
         cout<<"====================  END  =======================\n";
         cout<<"Nhap lua chon : ";
@@ -501,6 +514,13 @@ void  playerManager(){
         FootballManager fmng;
         fmng.insertPlayerformfile();
         fmng.removePlayerbyName(name);
+        system("pause");
+    }
+    else if (chon == 5)
+    {
+        FootballManager fmng;
+        fmng.Playerxuatcsv();
+        cout<<"Đâ xuất file thành công ";
         system("pause");
     }
     

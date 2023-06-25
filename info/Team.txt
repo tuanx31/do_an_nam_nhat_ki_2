@@ -1,0 +1,3 @@
+D1;Doi1;Nghe An;nguyen a
+D2;Doi2;Nghe An ;nguyen b
+D3;Doi3;Nghe An ;nguyen b
