@@ -25,8 +25,13 @@ public:
     void insert_player_to_file();
     string get_name();
     string get_idteam();
+    bool operator==(const Player& other)const;
 };
-
+bool Player::operator==(const Player& other)const{
+    return name == other.name && id == other.id&&cmnd==other.cmnd&&national == other.national
+    &&date_of_birth == other.date_of_birth&&height == other.height
+    && weight == other.weight&&postion_play == other.postion_play&&idteam == other.idteam;
+}
 void Player::insert_inf()
 {
     cout << "Nhập họ tên : ";
@@ -63,7 +68,7 @@ string Player::get_name(){
 
 void Player::insert_player_to_file(){
     ofstream MyFile("info/player.txt",ios::app);
-    MyFile<<endl<<name<<";"<<cmnd<<";"<<national<<";"<<date_of_birth<<";"<<height<<";"<<weight<<";"<<postion_play<<";"<<idteam;
+    MyFile<<name<<";"<<cmnd<<";"<<national<<";"<<date_of_birth<<";"<<height<<";"<<weight<<";"<<postion_play<<";"<<idteam<<endl;
     MyFile.close();
 }
 string Player::get_idteam(){

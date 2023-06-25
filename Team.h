@@ -23,8 +23,11 @@ public:
     void insert_team_to_file();
     string get_coach();
     string get_location();
+    bool operator==(const Team& other)const;
 };
-
+bool Team::operator==(const Team& other)const{
+    return name == other.name&&location==other.location&&coach == other.coach&&id_team==other.id_team;
+}
 void Team::insert_player_from_file(){
     ifstream read_player("info/player.txt"); // mở file để đọc
     string input;                            // đọc từng dòng rồi cho vào input
@@ -66,7 +69,7 @@ string Team::get_coach(){
 }
 void Team::insert_team_to_file(){
     ofstream MyFile("info/Team.txt",ios::app);
-    MyFile<<endl<<id_team<<";"<<name<<";"<<location<<";"<<coach;
+    MyFile<<id_team<<";"<<name<<";"<<location<<";"<<coach<<endl;
     MyFile.close();
 }
 
@@ -98,6 +101,6 @@ void Team::insert_inf()
 void Team::show_inf()
 {   
 
-    cout << setw(8) << id_team << setw(15) << name << setw(17) << location << setw(15) << coach << endl;
+    cout << setw(8) << id_team << setw(15) << name << setw(17) << location << setw(20) << coach << endl;
 
 }
