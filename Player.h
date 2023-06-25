@@ -18,7 +18,7 @@ private:
 
 public:
     Player(){};
-    Player(string _name, string _id, string _nation, string _date, string _height, string _weight, string _postion_pl, string _idteam) : name(_name), cmnd(_id), national(_nation), date_of_birth(_date), height(_height), weight(_weight), postion_play(_postion_pl),idteam(_idteam){};
+    Player(string _name, string _cmnd, string _nation, string _date, string _height, string _weight, string _postion_pl, string _idteam) : name(_name), cmnd(_cmnd), national(_nation), date_of_birth(_date), height(_height), weight(_weight), postion_play(_postion_pl),idteam(_idteam){};
     void insert_inf();
     void show_inf();
     void insert_player_to_file();

@@ -19,7 +19,15 @@ public:
     string get_name();
     string get_id();
     void insert_team_to_file();
+    string get_coach();
+    string get_location();
 };
+string Team::get_location(){
+    return location;
+}
+string Team::get_coach(){
+    return coach;
+}
 void Team::insert_team_to_file(){
     ofstream MyFile("info/player.txt",ios::app);
     MyFile<<endl<<id_team<<";"<<name<<";"<<location<<";"<<coach;

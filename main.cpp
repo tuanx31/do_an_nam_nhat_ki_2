@@ -26,7 +26,10 @@ public:
     void find_match_by_date(string date);
     void find_match_by_stadium(string st);
     void find_match_by_team(string team);
+    void find_team_by_coach(string coach);
+    void find_team_by_location(string location);
 };
+
 void FootballManager::find_match_by_team(string team){
     for(Match &macth : list_match){
         if (macth.get_team1()==team)
@@ -92,9 +95,29 @@ void FootballManager::insert_Match_from_file(){
     }
 }
 
+void FootballManager::find_team_by_location(string location){
+    for(Team &team : list_team){
+        if (team.get_location()==location)
+        {
+            team.show_inf();
+        }
+        
+    }       
+}
+
+void FootballManager::find_team_by_coach(string coach){
+    for(Team &team : list_team){
+        if (team.get_coach()==coach)
+        {
+            team.show_inf();
+        }
+        
+    }       
+}
+
 void FootballManager::find_team_by_id(string id){
     for(Team &team : list_team){
-        if (team.get_name()==id)
+        if (team.get_id()==id)
         {
             team.show_inf();
         }
@@ -184,11 +207,13 @@ void teamManager(){
     do
     {
         system("cls");
-        cout<<"=============  MENU  ==================\n";
+        cout<<"====================  MENU  ========================\n";
         cout<<"|| 1.Hiển thị danh sách đội bóng\n";
         cout<<"|| 2.Tìm kiếm đội bóng theo tên \n";
         cout<<"|| 3.Tìm kiếm đội bóng theo id \n";
-        cout<<"|| 4.Thêm đội bóng \n";        
+        cout<<"|| 4.Tìm kiếm đội bóng theo người huấn luyện\n";
+        cout<<"|| 5.Tìm kiếm đội bóng theo địa phương\n";
+        cout<<"|| 6.Thêm đội bóng \n";        
         cout<<"|| 0.Quay lại menu chính\n";
         cout<<"====================  END  =======================\n";
         cout<<"Nhap lua chon : ";
@@ -228,6 +253,29 @@ void teamManager(){
         }
         else if (chon == 4)
         {
+            string coach;
+            cout<<"Nhập tên huấn luyện viên :";
+            fflush(stdin);
+            getline(cin,coach);
+            FootballManager fmng;
+            fmng.insert_team_from_file();
+            fmng.find_team_by_coach(coach);
+            system("pause");
+        }
+        else if (chon == 5)
+        {
+            string location;
+            cout<<"Nhập tên địa phương :";
+            fflush(stdin);
+            getline(cin,location);
+            FootballManager fmng;
+            fmng.insert_team_from_file();
+            fmng.find_team_by_location(location);
+            system("pause");
+        }
+        
+        else if (chon == 6)
+        {
             Team team;
             int n;
             cout<<"Nhập số đội bóng cần thêm :";
@@ -258,7 +306,7 @@ void  playerManager(){
     int chon;
     do
     {   system("cls");
-        cout<<"=============  MENU  ==================\n";
+        cout<<"====================  MENU  ======================\n";
         cout<<"|| 1.Hiển thị tất cả cầu thủ\n";
         cout<<"|| 2.Tìm kiếm cầu thủ theo tên\n";
         cout<<"|| 3.Thêm cầu thủ \n";
@@ -347,6 +395,7 @@ void matchManganer(){
             FootballManager fmng;
             fmng.insert_Match_from_file();
             fmng.find_match_by_date(date);
+            system("pause");
         }
         else if (chon == 3)
         {
@@ -370,7 +419,6 @@ void matchManganer(){
             fmng.find_match_by_team(team);
             system("pause");
         }
-        
         else if (chon == 0){
             break;
         }
@@ -381,13 +429,10 @@ void matchManganer(){
 }
 int main()
 {
-    // FootballManager f;
-    // f.insert_team_from_file();
-    // f.show_all_team();
     int chon;
     do {
         system("cls");
-        cout<<"Chào mừng đến với phần mềm quản lí giải vô địch VILE\n";
+        cout<<"\tPHẦN MỀM QUẢN LÝ GIẢI VÔ ĐỊCH VILE\n";
         cout<<"====================  MENU  =======================\n";
         cout<<"|| 1.Quản lý danh sách cầu thủ "<<endl;
         cout<<"|| 2.Quản lý danh sách đội bóng "<<endl;
