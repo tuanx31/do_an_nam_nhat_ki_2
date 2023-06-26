@@ -1,3 +1,4 @@
 Nguyen Van C;123456;nghe an;30/10/1995;190;80;tien dao;D1
 Nguyen Van E;998932;Ha noi;20/12/2000;150;60;thu mon;D2
 Nguyen Van B;163814;Ha Tinh;31/10/2000;170;70;hau ve;D1
+Nguyen Thi A;9234534;Viet Nam;20/5/1999;170;70;Tien dao;D2

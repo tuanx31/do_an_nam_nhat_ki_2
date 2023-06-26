@@ -66,9 +66,10 @@ void Match::insert_inf()
 }
 void Match::show_inf()
 {
-    cout << "Ngay thi dau: " << date << endl;
-    cout << "San thi dau: " << Stadium << endl;
-    cout << "Doi 1: " << team1 << endl;
-    cout << "Doi 2: " << team2 << endl;
-    cout << "Ti so: " << score_doi_1 <<'-'<<score_doi_2 <<endl;
+    string score = to_string(score_doi_1)+"-"+to_string(score_doi_2);
+   std::cout << std::setw(15) <<date
+                  << std::setw(20) <<Stadium
+                  << std::setw(15) <<team1
+                  << std::setw(15) <<team2
+                  <<score<< std::endl;
 }

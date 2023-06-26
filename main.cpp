@@ -84,7 +84,7 @@ void FootballManager::Teamxuatcsv(){
 
 void clearFile(string typee){
     string path = "info/"+typee;
-    ofstream MyFile(path, std::ios::out | std::ios::trunc);
+    ofstream MyFile(path, ios::out | ios::trunc);
     MyFile<<"";
     MyFile.close();
     
@@ -188,8 +188,9 @@ void FootballManager::find_match_by_date(string date){
 void FootballManager::show_all_match(){
     for (Match &match : list_match){
         match.show_inf();
-        cout << "\n====================================="<<endl;
-    }
+        
+    }    std::cout<<"======================================================================\n";
+
 }
 
 void FootballManager::insert_Match_from_file(){
@@ -352,6 +353,15 @@ void TeamTitle(){
     cout << "=============================================================\n";
     cout << setw(8) << "Id" << setw(24) << "Tên đội bóng" << setw(20) << "Địa phương" << setw(24) << "Huấn luyện viên" << endl;
     cout << "=============================================================\n";
+}
+void MatchTitle(){
+    cout<<"======================================================================\n";
+    cout << left << setw(19) << "Ngày thi đấu"
+              << setw(24) << "Sân thi đấu"
+              << setw(18) << "Đội 1"
+              << setw(17) << "Đội 2"
+              << "Tỉ số" << endl;
+    cout<<"======================================================================\n";
 }
 void teamManager(){
     int chon;
@@ -608,6 +618,7 @@ void matchManganer(){
         cin>>chon;
         if(chon == 1){
             FootballManager fmng;
+            MatchTitle();
             fmng.insert_Match_from_file();
             fmng.show_all_match();
             system("pause");
@@ -619,6 +630,7 @@ void matchManganer(){
             fflush(stdin);
             getline(cin,date);
             FootballManager fmng;
+            MatchTitle();
             fmng.insert_Match_from_file();
             fmng.find_match_by_date(date);
             system("pause");
@@ -630,6 +642,7 @@ void matchManganer(){
             fflush(stdin);
             getline(cin,nhathidau);
             FootballManager fmng;
+            MatchTitle();
             fmng.insert_Match_from_file();
             fmng.find_match_by_stadium(nhathidau);
             system("pause");
@@ -641,6 +654,7 @@ void matchManganer(){
             fflush(stdin);
             getline(cin,team);
             FootballManager fmng;
+            MatchTitle();
             fmng.insert_Match_from_file();
             fmng.find_match_by_team(team);
             system("pause");
@@ -655,8 +669,8 @@ void matchManganer(){
                 cout<<"Nhập thông tin trận đấu thứ "<<i+1<<endl;
                 Match match;
                 match.insert_inf();
+                match.insert_to_file();
                 cout<<"====================================\n";
-                
             }
             cout<<"đã thêm xong ";
             system("pause");

@@ -1,3 +1,5 @@
 
-    for (Player &player : list_player){
-        if (player.get_name()==name)
+    std::string score;
+};
+
+void displayMatches(const std::vector<Match>& matches) {

@@ -1,34 +1,39 @@
 #include <iostream>
-#include <fstream>
+#include <iomanip>
 #include <vector>
-#include "csv.h"
+
+struct Match {
+    std::string date;
+    std::string stadium;
+    std::string team1;
+    std::string team2;
+    std::string score;
+};
+
+void displayMatches(const std::vector<Match>& matches) {
+    std::cout<<"======================================================================\n";
+    std::cout << std::left << std::setw(19) << "Ngày thi đấu"
+              << std::setw(24) << "Sân thi đấu"
+              << std::setw(18) << "Đội 1"
+              << std::setw(17) << "Đội 2"
+              << "Tỉ số" << std::endl;
+    
+    for (const Match& match : matches) {
+        std::cout << std::setw(15) << match.date
+                  << std::setw(20) << match.stadium
+                  << std::setw(15) << match.team1
+                  << std::setw(15) << match.team2
+                  << match.score << std::endl;
+    }
+}
 
 int main() {
-    // Tạo dữ liệu mẫu
-    std::vector<std::vector<std::string>> data = {
-        {"Header 1", "Header 2", "Header 3"},
-        {"Value 1", "Value 2", "Value 3"},
-        {"Value 4", "Value 5", "Value 6"}
+    std::vector<Match> matches = {
+        {"20/12/2022", "Svd My Dinh", "Doi 1", "Doi 2", "2-1"},
+        {"22/03/2023", "Svd Nghe An", "Doi1", "Doi3", "2-1"}
     };
 
-    // Mở tệp CSV để ghi
-    std::ofstream csvFile("data.csv");
-
-    // Tạo đối tượng CSV Writer
-    csv::Writer writer(csvFile);
-
-    // Tắt chế độ tự động định dạng ô
-    writer.configure_dialect().quote_none();
-
-    // Ghi dữ liệu vào tệp CSV
-    for (const auto& row : data) {
-        writer.write_row(row);
-    }
-
-    // Đóng tệp CSV
-    csvFile.close();
-
-    std::cout << "Tệp CSV đã được lưu." << std::endl;
+    displayMatches(matches);
 
     return 0;
 }
