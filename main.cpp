@@ -50,6 +50,7 @@ void FootballManager::Matchxuatcsv(){
     }
 }
 
+
 void FootballManager::Playerxuatcsv(){
     ofstream csv("info/player.csv");
     csv<<"Ho Ten;cmnd;Quoc Tich;Ngay sinh;Chieu cao;Can Nang;Vi tri choi;Id Team\n";
