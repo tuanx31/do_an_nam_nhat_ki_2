@@ -701,6 +701,9 @@ void matchManganer(){
     } while (chon!=0);
     
 }
+void Score_statistics(){
+    cout<<"phần này đang làm \n";
+}
 int main()
 {
     int chon;
@@ -711,6 +714,7 @@ int main()
         cout<<"|| 1.Quản lý danh sách cầu thủ "<<endl;
         cout<<"|| 2.Quản lý danh sách đội bóng "<<endl;
         cout<<"|| 3.Quản lý danh sách Trận đấu "<<endl;
+        cout<<"|| 4.Tính điểm các đội bóng đến thời điểm hiện tại "<<endl;
         cout<<"|| 0.Thoát "<<endl;
         cout<<"====================  END  =======================\n";
         cout<<"Nhập lựa chọn : ";
@@ -726,6 +730,9 @@ int main()
         break;
     case 3:
         matchManganer();
+        break;
+    case 4:
+        Score_statistics();
         break;
     case 0:
         break;
