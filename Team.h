@@ -28,15 +28,18 @@ public:
     void SavefileCsvPlayerOfTeam(string id);
 };
 void Team::SavefileCsvPlayerOfTeam(string id){
-        for (Player &player : list_player){
+    insert_player_from_file();
+    for (Player &player : list_player){
         if (player.get_idteam()==id)
         {
             player.savefilecsv(id);
+            player.show_inf();
         }
     }
 }
 
 void Team::savefilecsv(){
+    insert_player_from_file();
     ofstream MyFile("info/team.csv",ios::app);
     MyFile<<id_team<<";"<<name<<";"<<location<<";"<<coach<<endl;
     MyFile.close();

@@ -40,7 +40,7 @@ public:
     void xuatcsvPlayerofTeam(string id);
 };
 void FootballManager::xuatcsvPlayerofTeam(string id){
-    string path = "info/"+path+".csv";
+    string path = "info/"+id+".csv";
     ofstream csv(path);
     csv<<"Ho Ten;cmnd;Quoc Tich;Ngay sinh;Chieu cao;Can Nang;Vi tri choi;Id Team\n";
     csv.close();
@@ -719,4 +719,6 @@ int main()
         printf("Lua chon khong hop le. Moi ban chon lai!");        
     }
     } while(chon!=0);
+
+
 }
