@@ -20,6 +20,7 @@ int main() {
     matches.push_back(Match("Doi1", "Doi2", 3, 0));
     matches.push_back(Match("Doi1", "Doi3", 3, 0));
     matches.push_back(Match("Doi1", "Doi4", 1, 1));
+    matches.push_back(Match("Doi1", "Doi5", 0, 3));
 
     // Tính tổng điểm cho các đội bóng
     std::vector<std::string> teamNames;

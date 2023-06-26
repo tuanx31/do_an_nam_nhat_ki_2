@@ -50,14 +50,57 @@ public:
 void FootballManager::Score_statistics(){
     // thắng +3, thua +0 , hòa +1
     cout<<"Cơ chế tính điểm : thắng +3, thua +0 , hòa +1"<<endl;
-    vector<diemso> listdiem;
+    cout<<"==============================================\n";
+
     insert_Match_from_file();
     for(Match &match : list_match){
         match.Score_statistics();
         match.showdiem();
         cout<<"==============================================\n";
     }   
+    std::vector<std::string> teamNames;
+    std::vector<int> teamPoints;
+
+    for (Match &match : list_match) {
+        // Xử lý đội 1
+        int team1Index = -1;
+        for (size_t i = 0; i < teamNames.size(); ++i) {
+            if (teamNames[i] == match.get_team1()) {
+                team1Index = i;
+                break;
+            }
+        }
+
+        if (team1Index == -1) {
+            teamNames.push_back(match.get_team1());
+            teamPoints.push_back(match.get_staticscoredoi1());
+        } else {
+            teamPoints[team1Index] += match.get_staticscoredoi1();
+        }
+
+        // Xử lý đội 2
+        int team2Index = -1;
+        for (size_t i = 0; i < teamNames.size(); ++i) {
+            if (teamNames[i] == match.get_team2()) {
+                team2Index = i;
+                break;
+            }
+        }
+
+        if (team2Index == -1) {
+            teamNames.push_back(match.get_team2());
+            teamPoints.push_back(match.get_staticscoredoi2());
+        } else {
+            teamPoints[team2Index] += match.get_staticscoredoi2();
+        }
+    }
+
+    // In ra tổng điểm của các đội bóng
     
+    cout<<"Tổng điểm mỗi đội bóng : \n";
+    for (size_t i = 0; i < teamNames.size(); ++i) {
+        std::cout << "Đội " << teamNames[i] << ": " << teamPoints[i] << " điểm" << std::endl;
+    }
     
     
 

@@ -25,6 +25,7 @@ public:
     void savefilecsv();
     void Score_statistics();
     int get_staticscoredoi1();
+    int get_staticscoredoi2();
     void showdiem();
 };
 
@@ -35,6 +36,9 @@ void Match::showdiem(){
 
 int Match::get_staticscoredoi1(){
     return staticscoredoi1;
+}
+int Match::get_staticscoredoi2(){
+    return staticscoredoi2;
 }
 
 void Match::Score_statistics(){
