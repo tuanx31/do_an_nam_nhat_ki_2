@@ -36,7 +36,19 @@ public:
     void removeMatchbyindex(int n);
     void Playerxuatcsv();
     void Teamxuatcsv();
+    void Matchxuatcsv();
 };
+
+void FootballManager::Matchxuatcsv(){
+    ofstream csv("info/Match.csv");
+    csv<<"Ngay thi dau;San thi dau;Ten doi bong 1;Ten doi bong 2;Ti so\n";
+    insert_Match_from_file();
+    csv.close();
+    for (Match &match : list_match){
+        match.show_inf();
+        match.savefilecsv();
+    }
+}
 
 void FootballManager::Playerxuatcsv(){
     ofstream csv("info/player.csv");
@@ -561,6 +573,8 @@ void matchManganer(){
         cout<<"|| 3.Tìm kiếm trận đấu theo nhà thi đấu\n";
         cout<<"|| 4.Tìm kiếm trận đấu theo đội bóng \n";
         cout<<"|| 5.Thêm trận đấu \n";
+        cout<<"|| 6.Xóa trận đấu \n";
+        cout<<"|| 7.Xuất excel\n";
         cout<<"|| 0.Quay lại menu chính\n";
         cout<<"====================  END  =======================\n";
         cout<<"Nhập lựa chọn : ";
@@ -619,6 +633,23 @@ void matchManganer(){
                 
             }
             cout<<"đã thêm xong ";
+            system("pause");
+        }
+        else if (chon == 6)
+        {
+            int n;
+            FootballManager fmng;
+            cout<<"Chọn vị trí cần xóa (lưu ý vị trí bắt đầu từ số 0): ";
+            cin>>n;
+            fmng.removeMatchbyindex(n);
+            cout<<"Đã xóa \n";
+            system("pause");
+        }
+        else if (chon == 7)
+        {
+            FootballManager fmng;
+            fmng.Matchxuatcsv();
+            cout<<"Đã xuất xong\n";
             system("pause");
         }
         

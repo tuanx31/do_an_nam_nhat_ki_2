@@ -20,7 +20,15 @@ public:
     string get_team1();
     string get_team2();
     void insert_to_file();
+    void savefilecsv();
 };
+
+void Match::savefilecsv(){
+    ofstream MyFile("info/Match.csv",ios::app);
+    MyFile<<date<<";"<<Stadium<<";"<<team1<<";"<<team2<<";"<<score_doi_1<<"--"<<score_doi_2<<endl;
+    MyFile.close();
+}
+
 
 void Match::insert_to_file(){
     ofstream MyFile("info/Match.txt",ios::app);
