@@ -23,8 +23,15 @@ public:
     void insert_team_to_file();
     string get_coach();
     string get_location();
+    void savefilecsv();
     bool operator==(const Team& other)const;
 };
+
+void Team::savefilecsv(){
+    ofstream MyFile("info/team.csv",ios::app);
+    MyFile<<id_team<<";"<<name<<";"<<location<<";"<<coach<<endl;
+    MyFile.close();
+}
 bool Team::operator==(const Team& other)const{
     return name == other.name&&location==other.location&&coach == other.coach&&id_team==other.id_team;
 }
