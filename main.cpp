@@ -37,8 +37,16 @@ public:
     void Playerxuatcsv();
     void Teamxuatcsv();
     void Matchxuatcsv();
+    void xuatcsvPlayerofTeam(string id);
 };
-
+void FootballManager::xuatcsvPlayerofTeam(string id){
+    string path = "info/"+path+".csv";
+    ofstream csv(path);
+    csv<<"Ho Ten;cmnd;Quoc Tich;Ngay sinh;Chieu cao;Can Nang;Vi tri choi;Id Team\n";
+    csv.close();
+    Team team;
+    team.SavefileCsvPlayerOfTeam(id);
+}
 void FootballManager::Matchxuatcsv(){
     ofstream csv("info/Match.csv");
     csv<<"Ngay thi dau;San thi dau;Ten doi bong 1;Ten doi bong 2;Ti so\n";
@@ -58,7 +66,7 @@ void FootballManager::Playerxuatcsv(){
     csv.close();
     for (Player &player : list_player){
         player.show_inf();
-        player.savefilecsv();
+        player.savefilecsv("player");
     }
 }
 
@@ -72,6 +80,7 @@ void FootballManager::Teamxuatcsv(){
         team.savefilecsv();
     }
 }
+
 
 void clearFile(string typee){
     string path = "info/"+typee;
@@ -334,7 +343,11 @@ void FootballManager::find_player_by_name(string name){
         }
     }
 }
-
+void PlayerTitle(){
+        cout << "============================================================================================" << endl;
+        cout << setw(15) << "Họ tên" << setw(20) << "Số CMND" << setw(20) << "Quốc tịch"<< setw(15)<<"Ngày sinh"<< setw(14) << "Chiều cao" << setw(13) << "Cân nặng" << setw(10) << "ID team" << endl;
+        cout << "============================================================================================" << endl;
+}
 void TeamTitle(){
     cout << "=============================================================\n";
     cout << setw(8) << "Id" << setw(24) << "Tên đội bóng" << setw(20) << "Địa phương" << setw(24) << "Huấn luyện viên" << endl;
@@ -355,7 +368,8 @@ void teamManager(){
         cout<<"|| 6.Thêm đội bóng \n";
         cout<<"|| 7.Hiển thị danh sách người chơi theo tên đội bóng\n";
         cout<<"|| 8.Xóa đội bóng theo tên \n";
-        cout<<"|| 9.Xuất file excel\n";        
+        cout<<"|| 9.Xuất excel danh sách đội bóng\n";
+        cout<<"|| 10.Xuất excel danh sách cầu thủ theo tên đội bóng\n";
         cout<<"|| 0.Quay lại menu chính\n";
         cout<<"====================  END  =======================\n";
         cout<<"Nhap lua chon : ";
@@ -446,7 +460,8 @@ void teamManager(){
             fmng.insert_team_from_file();
             string idteam = fmng.get_idteam_by_nameTeam(namedb);
             Team team;
-            cout<<"Danh sách đội bóng của đội bóng : "<<namedb<<endl;
+            cout<<"Danh sách cầu thủ của đội bóng : "<<namedb<<endl;
+            PlayerTitle();
             team.find_player_of_id_team(idteam);
             system("pause");
         }
@@ -467,6 +482,20 @@ void teamManager(){
             cout<<"Đâ xuất file thành công ";
             system("pause");
         }
+        else if (chon == 10)
+        {
+            string namedb;
+            cout<<"Nhập tên đội bóng : ";
+            fflush(stdin);
+            getline(cin,namedb);
+            FootballManager fmng;
+            fmng.insert_team_from_file();
+            string idteam = fmng.get_idteam_by_nameTeam(namedb);
+            fmng.xuatcsvPlayerofTeam(idteam);
+            cout<<"đã xuất thành công danh sách cầu thủ của đội bóng : "<<namedb<<endl;
+            system("pause");
+        }
+        
         
         else if (chon == 0){
             break;
@@ -477,11 +506,7 @@ void teamManager(){
     } while (chon!=0);
     
 }
-void PlayerTitle(){
-        cout << "============================================================================================" << endl;
-        cout << setw(15) << "Họ tên" << setw(20) << "Số CMND" << setw(20) << "Quốc tịch"<< setw(15)<<"Ngày sinh"<< setw(14) << "Chiều cao" << setw(13) << "Cân nặng" << setw(10) << "ID team" << endl;
-        cout << "============================================================================================" << endl;
-}
+
 
 void  playerManager(){
     

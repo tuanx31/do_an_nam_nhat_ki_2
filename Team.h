@@ -25,7 +25,16 @@ public:
     string get_location();
     void savefilecsv();
     bool operator==(const Team& other)const;
+    void SavefileCsvPlayerOfTeam(string id);
 };
+void Team::SavefileCsvPlayerOfTeam(string id){
+        for (Player &player : list_player){
+        if (player.get_idteam()==id)
+        {
+            player.savefilecsv(id);
+        }
+    }
+}
 
 void Team::savefilecsv(){
     ofstream MyFile("info/team.csv",ios::app);
