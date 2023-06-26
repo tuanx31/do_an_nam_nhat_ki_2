@@ -9,6 +9,13 @@
 #include <iomanip>
 #include <algorithm>
 using namespace std;
+
+class diemso{
+    public:
+        string name;
+        int diem;
+};
+
 class FootballManager
 {
 private:
@@ -38,7 +45,23 @@ public:
     void Teamxuatcsv();
     void Matchxuatcsv();
     void xuatcsvPlayerofTeam(string id);
+    void Score_statistics();
 };
+void FootballManager::Score_statistics(){
+    // thắng +3, thua +0 , hòa +1
+    cout<<"Cơ chế tính điểm : thắng +3, thua +0 , hòa +1"<<endl;
+    vector<diemso> listdiem;
+    insert_Match_from_file();
+    for(Match &match : list_match){
+        match.Score_statistics();
+        match.showdiem();
+        cout<<"==============================================\n";
+    }   
+    
+    
+    
+
+}
 void FootballManager::xuatcsvPlayerofTeam(string id){
     string path = "info/"+id+".csv";
     ofstream csv(path);
@@ -701,8 +724,10 @@ void matchManganer(){
     } while (chon!=0);
     
 }
-void Score_statistics(){
-    cout<<"phần này đang làm \n";
+void tinhdiem(){
+    FootballManager fmng;
+    fmng.Score_statistics();
+    system("pause");
 }
 int main()
 {
@@ -732,7 +757,7 @@ int main()
         matchManganer();
         break;
     case 4:
-        Score_statistics();
+        tinhdiem();
         break;
     case 0:
         break;
@@ -740,5 +765,6 @@ int main()
         printf("Lua chon khong hop le. Moi ban chon lai!");        
     }
     } while(chon!=0);
-
-}   
+    // FootballManager fmng;
+    // fmng.Score_statistics();
+}
