@@ -808,6 +808,4 @@ int main()
         printf("Lua chon khong hop le. Moi ban chon lai!");        
     }
     } while(chon!=0);
-    // FootballManager fmng;
-    // fmng.Score_statistics();
 }
