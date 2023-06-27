@@ -410,7 +410,7 @@ void FootballManager::find_player_by_name(string name){
 }
 void PlayerTitle(){
         cout << "============================================================================================" << endl;
-        cout << setw(15) << "Họ tên" << setw(20) << "Số CMND" << setw(20) << "Quốc tịch"<< setw(15)<<"Ngày sinh"<< setw(14) << "Chiều cao" << setw(13) << "Cân nặng" << setw(10) << "ID team" << endl;
+        cout << setw(20) << "Họ tên" << setw(20) << "Số CMND" << setw(20) << "Quốc tịch"<< setw(15)<<"Ngày sinh"<< setw(14) << "Chiều cao" << setw(13) << "Cân nặng" << setw(10) << "ID team" << endl;
         cout << "============================================================================================" << endl;
 }
 void TeamTitle(){
@@ -500,6 +500,7 @@ void teamManager(){
             cout<<"Nhập tên địa phương :";
             fflush(stdin);
             getline(cin,location);
+            TeamTitle();
             FootballManager fmng;
             fmng.insert_team_from_file();
             fmng.find_team_by_location(location);

@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" modified="2023-06-27T06:05:56.279Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="0Kfso9hlBkVS0yTnk_4k" version="21.5.0" type="device">
+  <diagram name="Trang-1" id="P8Dl6Kbi9v6F-MObA-D-">
+    <mxGraphModel dx="1687" dy="2096" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-1" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Player&lt;/font&gt;&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="322" y="-121" width="160" height="302" as="geometry">
+            <mxRectangle x="310" y="220" width="100" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-2" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;- ID: string;&lt;br&gt;- Name: string;&lt;br&gt;- CMND: string;&lt;br&gt;- National: string;&lt;br&gt;- Date_of_birth: string;&lt;br&gt;- heght, weght: string;&lt;br&gt;- postion_play: string;&lt;br&gt;- IDteam: string&lt;br&gt;&lt;/font&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-1" vertex="1">
+          <mxGeometry y="26" width="160" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-4" value="&lt;div&gt;void insert_inf();&lt;/div&gt;&lt;div&gt;void show_inf();&lt;/div&gt;&lt;div&gt;void insert_player_to_file();&lt;/div&gt;&lt;div&gt;string get_name();&lt;/div&gt;&lt;div&gt;string get_idteam();&lt;/div&gt;&lt;div&gt;void savefilecsv(string path);&lt;/div&gt;&lt;div&gt;bool operator==(const Player&amp;amp; other)const;&lt;/div&gt;" style="text;strokeColor=default;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-1" vertex="1">
+          <mxGeometry y="160" width="160" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-5" value="Team" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="8" y="-122" width="244" height="278" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-6" value="&lt;div&gt;- name, location, coach,id_team: string;&lt;/div&gt;&lt;div&gt;- vector&amp;lt;Player&amp;gt; list_player;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-5" vertex="1">
+          <mxGeometry y="26" width="244" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="J-IeqIofZcOz-OHZjEsh-5" vertex="1">
+          <mxGeometry y="68" width="244" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-8" value="&lt;div&gt;- void addPlayer(Player player);&lt;/div&gt;&lt;div&gt;- void insert_inf();&lt;/div&gt;&lt;div&gt;- void show_inf();&lt;/div&gt;&lt;div&gt;- void insert_player_from_file();&lt;/div&gt;&lt;div&gt;- void find_player_of_id_team(string id);&lt;/div&gt;&lt;div&gt;- string get_name();&lt;/div&gt;&lt;div&gt;- string get_id();&lt;/div&gt;&lt;div&gt;- void insert_team_to_file();&lt;/div&gt;&lt;div&gt;- string get_coach();&lt;/div&gt;&lt;div&gt;- string get_location();&lt;/div&gt;&lt;div&gt;-&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;void savefilecsv();&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- bool operator==(const Team&amp;amp; other)const;&lt;/div&gt;&lt;div&gt;- void SavefileCsvPlayerOfTeam(string id);&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-5" vertex="1">
+          <mxGeometry y="76" width="244" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-9" value="Match" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="552" y="-122" width="204" height="334" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-10" value="&lt;div&gt;- Date: string;&lt;/div&gt;&lt;div&gt;- Stadium: string;&lt;/div&gt;&lt;div&gt;- team1, team2: string;&lt;/div&gt;&lt;div&gt;- int score_doi_1,score_doi_2;&amp;nbsp;&lt;/div&gt;&lt;div&gt;- int staticscoredoi1,staticscoredoi2&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-9" vertex="1">
+          <mxGeometry y="26" width="204" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="J-IeqIofZcOz-OHZjEsh-9" vertex="1">
+          <mxGeometry y="110" width="204" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-12" value="&lt;div&gt;- void insert_inf();&lt;/div&gt;&lt;div&gt;- void show_inf();&lt;/div&gt;&lt;div&gt;- string get_date();&lt;/div&gt;&lt;div&gt;- string get_stadium();&lt;/div&gt;&lt;div&gt;- string get_team1();&lt;/div&gt;&lt;div&gt;- string get_team2();&lt;/div&gt;&lt;div&gt;- int get_score1();&lt;/div&gt;&lt;div&gt;- int get_score2();&lt;/div&gt;&lt;div&gt;- void insert_to_file();&lt;/div&gt;&lt;div&gt;- void savefilecsv();&lt;/div&gt;&lt;div&gt;- void Score_statistics();&lt;/div&gt;&lt;div&gt;- int get_staticscoredoi1();&lt;/div&gt;&lt;div&gt;- int get_staticscoredoi2();&lt;/div&gt;&lt;div&gt;- void showdiem();&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-9" vertex="1">
+          <mxGeometry y="118" width="204" height="216" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-13" value="FootballManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="256.5" y="-629" width="291" height="354" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-14" value="&lt;div&gt;vector&amp;lt;Team&amp;gt; list_team;&lt;/div&gt;&lt;div&gt;vector&amp;lt;Match&amp;gt; list_match;&lt;/div&gt;&lt;div&gt;vector&amp;lt;Player&amp;gt; list_player;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-13" vertex="1">
+          <mxGeometry y="26" width="291" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="J-IeqIofZcOz-OHZjEsh-13" vertex="1">
+          <mxGeometry y="78" width="291" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-16" value="&lt;div&gt;- void insertPlayerformfile();&lt;/div&gt;&lt;div&gt;- void find_player_by_name(string name);&lt;/div&gt;&lt;div&gt;- void showallplayer();&lt;/div&gt;&lt;div&gt;- void find_team_by_name(string name);&lt;/div&gt;&lt;div&gt;- void find_team_by_id(string id);&lt;/div&gt;&lt;div&gt;- void insert_team_from_file();&lt;/div&gt;&lt;div&gt;- void insert_Match_from_file();&lt;/div&gt;&lt;div&gt;- void show_all_team();&lt;/div&gt;&lt;div&gt;- void show_all_match();&lt;/div&gt;&lt;div&gt;- void find_match_by_date(string date);&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- void find_match_by_stadium(string st);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- void find_match_by_team(string team);&lt;/div&gt;&lt;div&gt;- void find_team_by_coach(string coach);&lt;/div&gt;&lt;div&gt;- void find_team_by_location(string location);&lt;/div&gt;&lt;div&gt;- string get_idteam_by_nameTeam(string name);&lt;/div&gt;&lt;div&gt;- void removePlayerbyName(string name);&lt;/div&gt;&lt;div&gt;- void removeTeambyname(string name);&lt;/div&gt;&lt;div&gt;- void removeMatchbyindex(int n);&lt;/div&gt;&lt;div&gt;- void Playerxuatcsv();&lt;/div&gt;&lt;div&gt;- void Teamxuatcsv();&lt;/div&gt;&lt;div&gt;- void Matchxuatcsv();&lt;/div&gt;&lt;div&gt;- void xuatcsvPlayerofTeam(string id);&lt;/div&gt;&lt;div&gt;- void Score_statistics();&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="J-IeqIofZcOz-OHZjEsh-13" vertex="1">
+          <mxGeometry y="86" width="291" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-31" value="" style="rhombus;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;startSize=26;" parent="1" vertex="1">
+          <mxGeometry x="305" y="-275" width="32" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-34" value="" style="rhombus;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;startSize=26;" parent="1" vertex="1">
+          <mxGeometry x="384" y="-277" width="32" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-39" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.475;exitY=0.007;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="J-IeqIofZcOz-OHZjEsh-1" target="J-IeqIofZcOz-OHZjEsh-34" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="412" y="-123" as="sourcePoint" />
+            <mxPoint x="462" y="-173" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="-151" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JWwI96ZyA2ElsASMz0om-1" value="1-n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="J-IeqIofZcOz-OHZjEsh-39">
+          <mxGeometry x="0.0936" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-41" value="1-n" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="J-IeqIofZcOz-OHZjEsh-5" target="J-IeqIofZcOz-OHZjEsh-31" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="408" y="-221" as="sourcePoint" />
+            <mxPoint x="301" y="-247" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="128" y="-154" />
+              <mxPoint x="133" y="-202" />
+              <mxPoint x="319" y="-204" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="J-IeqIofZcOz-OHZjEsh-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="654" y="-122" as="sourcePoint" />
+            <mxPoint x="454" y="-262" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="654" y="-199" />
+              <mxPoint x="454" y="-199" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JWwI96ZyA2ElsASMz0om-3" value="1-n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="J-IeqIofZcOz-OHZjEsh-44">
+          <mxGeometry x="-0.0176" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J-IeqIofZcOz-OHZjEsh-36" value="" style="rhombus;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;startSize=26;strokeColor=#d9d5d0;" parent="1" vertex="1">
+          <mxGeometry x="440" y="-272" width="28" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

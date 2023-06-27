@@ -59,7 +59,7 @@ void Player::insert_inf()
 
 void Player::show_inf()
 {
-    std::cout << std::setw(15) << name << std::setw(15) << cmnd << std::setw(15) 
+    std::cout << std::setw(20) << name << std::setw(15) << cmnd << std::setw(15) 
     << national <<std::setw(15) << date_of_birth<< std::setw(10) << height << std::setw(10) << weight << std::setw(10) << idteam << std::endl;
 
 }
