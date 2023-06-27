@@ -47,6 +47,7 @@ public:
     void xuatcsvPlayerofTeam(string id);
     void Score_statistics();
 };
+
 void FootballManager::Score_statistics(){
     // thắng +3, thua +0 , hòa +1
     cout<<"Cơ chế tính điểm : thắng +3, thua +0 , hòa +1"<<endl;
@@ -86,8 +87,7 @@ void FootballManager::Score_statistics(){
                 break;
             }
         }
-
-        if (team2Index == -1) {
+            if (team2Index == -1) {
             teamNames.push_back(match.get_team2());
             teamPoints.push_back(match.get_staticscoredoi2());
         } else {
@@ -99,11 +99,9 @@ void FootballManager::Score_statistics(){
     
     cout<<"Tổng điểm mỗi đội bóng : \n";
     for (size_t i = 0; i < teamNames.size(); ++i) {
-        std::cout << "Đội " << teamNames[i] << ": " << teamPoints[i] << " điểm" << std::endl;
+        cout << "Đội " << teamNames[i] << ": " << teamPoints[i] << " điểm" << endl;
     }
     
-    
-
 }
 void FootballManager::xuatcsvPlayerofTeam(string id){
     string path = "info/"+id+".csv";
