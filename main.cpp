@@ -10,11 +10,6 @@
 #include <algorithm>
 using namespace std;
 
-class diemso{
-    public:
-        string name;
-        int diem;
-};
 
 class FootballManager
 {
@@ -172,6 +167,7 @@ void FootballManager::removeTeambyname(string name){
             target.show_inf();
         }
     }
+
     auto it = find(list_team.begin(), list_team.end(), target);
     if (it != list_team.end()) {
         // Tìm thấy phần tử
@@ -365,13 +361,13 @@ void FootballManager::insert_team_from_file(){
 void FootballManager::show_all_team(){
     for (Team &team : list_team){
         team.show_inf();
-        cout << "=============================================================\n";
+        cout << "==================================================================\n";
 
     }
 }
 void FootballManager::insertPlayerformfile(){
     ifstream read_player("info/player.txt"); // mở file để đọc
-    string input;                            // đọc từng dòng rồi cho vào input
+    string input;                           // đọc từng dòng rồi cho vào input
     vector<string> all_lines;                // 1 mảng gồm nhiều input   
     while (getline(read_player, input))
     {
@@ -395,7 +391,7 @@ void FootballManager::insertPlayerformfile(){
 void FootballManager::showallplayer(){
     for (Player &player :list_player){
         player.show_inf();
-        cout << "============================================================================================" << endl;
+        cout << "=================================================================================================" << endl;
     }
 }
 
@@ -404,14 +400,14 @@ void FootballManager::find_player_by_name(string name){
         if (player.get_name()==name)
         {
             player.show_inf();
-            cout << "============================================================================================" << endl;
+            cout << "=================================================================================================" << endl;
         }
     }
 }
 void PlayerTitle(){
-        cout << "============================================================================================" << endl;
+        cout << "=================================================================================================" << endl;
         cout << setw(20) << "Họ tên" << setw(20) << "Số CMND" << setw(20) << "Quốc tịch"<< setw(15)<<"Ngày sinh"<< setw(14) << "Chiều cao" << setw(13) << "Cân nặng" << setw(10) << "ID team" << endl;
-        cout << "============================================================================================" << endl;
+        cout << "=================================================================================================" << endl;
 }
 void TeamTitle(){
     cout << "=============================================================\n";

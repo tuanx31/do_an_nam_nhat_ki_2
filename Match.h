@@ -19,8 +19,8 @@ public:
     string get_stadium();
     string get_team1();
     string get_team2();
-    int get_score1();
-    int get_score2();
+    // int get_score1();
+    // int get_score2();
     void insert_to_file();
     void savefilecsv();
     void Score_statistics();
@@ -103,9 +103,9 @@ void Match::insert_inf()
 void Match::show_inf()
 {
     string score = to_string(score_doi_1)+"-"+to_string(score_doi_2);
-   std::cout << std::setw(15) <<date
-                  << std::setw(20) <<Stadium
-                  << std::setw(15) <<team1
-                  << std::setw(15) <<team2
-                  <<score<< std::endl;
+   cout << setw(15) <<date
+                  << setw(20) <<Stadium
+                  << setw(15) <<team1
+                  << setw(15) <<team2
+                  <<score<< endl;
 }
